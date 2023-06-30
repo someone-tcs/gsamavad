@@ -1,38 +1,224 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Eczar&family=Kanit:wght@500&family=Nabla&family=Playfair+Display&family=Rowdies&family=Rubik+80s+Fade&family=Rubik+Iso&family=Rubik+Maze&family=Rubik+Microbe&family=Silkscreen&family=Sono&family=Space+Grotesk:wght@500&display=swap');
+
+/* font-family: 'Abril Fatface', cursive;
+font-family: 'Eczar', serif;
+font-family: 'Kanit', sans-serif;
+font-family: 'Nabla', cursive;
+font-family: 'Playfair Display', serif;
+font-family: 'Rowdies', cursive;
+font-family: 'Rubik 80s Fade', cursive;
+font-family: 'Rubik Iso', cursive;
+font-family: 'Rubik Maze', cursive;
+font-family: 'Rubik Microbe', cursive;
+font-family: 'Silkscreen', cursive;
+font-family: 'Sono', sans-serif;
+font-family: 'Space Grotesk', sans-serif; */
+
+body {
+  color: #ffffff;
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/infinitum-mathapathi.appspot.com/o/bgi.png?alt=media&token=e5463a5c-89ee-4da8-9c1f-2e695c47a68a');
+  background-size: contain;
+  background-position: center;
+  font-weight: bold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.box {
+  text-shadow: 0px 0px 30px yellow;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.boxW {
+  box-shadow: 0px 0px 30px rgb(255, 255, 255);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.boxWt {
+  text-shadow: 0px 0px 30px rgb(255, 255, 255);
+}
+
+.f1{
+  font-family: 'Abril Fatface', cursive;
+}
+
+.f2{
+  font-family: 'Eczar', serif;
+}
+
+.f3{
+  font-family: 'Kanit', sans-serif;
+}
+
+.f4{
+  font-family: 'Nabla', cursive;
+}
+
+.f5{
+  font-family: 'Playfair Display', serif;
+}
+
+.f6{
+  font-family: 'Rowdies', cursive;
+}
+
+.f7{
+  font-family: 'Rubik 80s Fade', cursive;
+}
+
+.f8{
+  font-family: 'Rubik Iso', cursive;
+}
+
+.f9{
+  font-family: 'Rubik Maze', cursive;
+}
+
+.f10{
+  font-family: 'Rubik Microbe', cursive;
+}
+
+.f11{
+  font-family: 'Silkscreen', cursive;
+}
+
+.f12{
+  font-family: 'Sono', sans-serif;
+}
+
+.f13{
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* .btn */
+.btn{
+  background: #000000;
+  color: #ffffff;
+  padding: 0 10px 0 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.cta {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 11px 33px;
+  text-decoration: none;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  background: #000000;
+  transition: 1s;
+  box-shadow: 6px 6px 0 rgb(78, 78, 78);
+  transform: skewX(-15deg);
+  border: none;
 }
 
-.App-link {
-  color: #61dafb;
+.cta:focus {
+  outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.cta:hover {
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 #6f6f6f;
+}
+
+.cta .second {
+  transition: 0.5s;
+  margin-right: 0px;
+}
+
+.cta:hover  .second {
+  transition: 0.5s;
+  margin-right: 45px;
+}
+
+.span {
+  transform: skewX(15deg)
+}
+
+.second {
+  width: 20px;
+  margin-left: 30px;
+  position: relative;
+  top: 12%;
+}
+
+.one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+.two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.cta:hover .three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover .one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover .two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+
+@keyframes color_anim {
+  0% {
+    fill: white;
   }
-  to {
-    transform: rotate(360deg);
+
+  50% {
+    fill: #000000;
   }
+
+  100% {
+    fill: white;
+  }
+}
+
+.linking{
+  color: #b9b9b9;
+  text-decoration: none;
+  opacity: 100%;
+  padding: 10px;
+}
+
+.linking:hover{
+  color: rgb(255, 157, 0);
+  text-decoration: none;
+  opacity: 100%;
+  padding: 10px;
+}
+
+.linking1{
+  color: #b9b9b9;
+  text-decoration: none;
+  opacity: 100%;
+  padding: 10px;
+}
+
+.linking1:hover{
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+  opacity: 100%;
+  padding: 10px;
+}
+
+.linking-box{
+  color: yellow;
+  text-decoration: none;
+  opacity: 100%;
+  padding: 10px;
+}
+
+.linking-box:hover{
+  color: rgb(255, 149, 0);
+  text-decoration: none;
+  opacity: 100%;
+  padding: 10px;
+}
+
+/* postImg Zoom */
+.img-z:hover{
+  opacity: 50%;
 }
