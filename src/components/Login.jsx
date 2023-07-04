@@ -6,7 +6,7 @@ import GoogleButton from 'react-google-button'
 const Login = () => {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
-    const [response, setResponse] = useState()
+    const [username, setUsername] = useState()
 
     
 
@@ -37,12 +37,17 @@ const Login = () => {
             borderRadius: '10px'
         }}>
             <center>
-                <input type='email' className='f12' style={{background: '#eee', color: 'black', border: 'none', borderRadius: '10px', padding: '10px', width:'100%'}} placeholder='Your Email' value={email} onChange={(e) => {
+            <input required type='email' className='f12' style={{background: '#eee', color: 'black', border: 'none', borderRadius: '10px', padding: '10px', width:'100%'}} placeholder='Your MID' value={username} onChange={(e) => {
+                setUsername(e.target.value)
+            }} />
+            <br />
+            <br />
+                <input required type='email' className='f12' style={{background: '#eee', color: 'black', border: 'none', borderRadius: '10px', padding: '10px', width:'100%'}} placeholder='Your Email' value={email} onChange={(e) => {
                     setEmail(e.target.value)
                 }} />
                 <br />
                 <br />
-                <input type='password' className='f12' style={{background: '#eee', color: 'black', border: 'none', borderRadius: '10px', padding: '10px', width:'100%'}} placeholder='Your Password' value={password} onChange={(e) => {
+                <input required type='password' className='f12' style={{background: '#eee', color: 'black', border: 'none', borderRadius: '10px', padding: '10px', width:'100%'}} placeholder='Your Password' value={password} onChange={(e) => {
                     setPassword(e.target.value)
                 }} />
                 <br />
