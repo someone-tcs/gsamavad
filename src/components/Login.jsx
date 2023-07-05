@@ -23,6 +23,11 @@ const Login = () => {
     const way2 = () => {
         auth.createUserWithEmailAndPassword(email, password)
         .then(() => {
+            auth.onAuthStateChanged(user => {
+                user.updateProfile({
+                    displayName: response
+                })
+            })
             window.location.href = "/home"
         }).catch((e) => {
             console.error(e);
@@ -42,20 +47,21 @@ const Login = () => {
                 }} />
                 <br />
                 <br />
+                <input type='text' className='f12' style={{background: '#eee', color: 'black', border: 'none', borderRadius: '10px', padding: '10px', width:'100%'}} placeholder='Your MID' value={response} onChange={(e) => {
+                    setResponse(e.target.value)
+                }} />
+                <br />
+                <br />
                 <input type='password' className='f12' style={{background: '#eee', color: 'black', border: 'none', borderRadius: '10px', padding: '10px', width:'100%'}} placeholder='Your Password' value={password} onChange={(e) => {
                     setPassword(e.target.value)
                 }} />
                 <br />
                 <br />
-                <button onClick={way2} style={{background: '#eee', color: 'black', border: 'none', borderRadius: '10px', padding: '10px', width:'100%'}}  className='box f13'>
+                <button onClick={way2} style={{background: '#eee', color: 'black', border: 'none', borderRadius: '10px', padding: '10px', width:'100%', cursor: 'pointer'}}  className='box f13'>
 
                     <b>Register</b>
 
                 </button>
-
-                <h2 className="f11">OR</h2>
-
-                <GoogleButton style={{width: '100%'}} onClick={signin} />
             </center>
         
         </div>
