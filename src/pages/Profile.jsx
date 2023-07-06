@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { auth } from '../server/server';
 
 const ProfilePage = () => {
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState();
   const [email, setEmail] = useState('');
   const [newusername, setNewUsername] = useState('');
   const [newemail, setNewEmail] = useState('');
@@ -13,16 +13,12 @@ const ProfilePage = () => {
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
-        setUsername(`GS_${user.displayName}`);
+        setUsername(user.displayName);
         setEmail(user.email);
-        if (!user.photoURL) {
-          user.updateProfile({
-            photoURL: 'https://api.dicebear.com/6.x/notionists-neutral/svg',
-          });
-        }
+        
         setPhotoURL(user.photoURL);
       } else {
-        setPhotoURL('');
+        setPhotoURL();
       }
     });
   }, [photoURL, username, email]);
@@ -30,7 +26,6 @@ const ProfilePage = () => {
   const update = () => {
     auth.onAuthStateChanged(user => {
       user.updateProfile({
-        email: newemail,
         photoURL: newphotoURL
       }).then(() => {
         setFollowers('Updated Successfully!')
@@ -56,6 +51,7 @@ const ProfilePage = () => {
 
             <br />
             <input
+              disabled
               defaultValue={username}
               onChange={(e) => setNewUsername(e.target.value)}
               className="form-control mt-3"
@@ -71,6 +67,7 @@ const ProfilePage = () => {
             />
             <br />
             <input
+              disabled
               defaultValue={email}
               onChange={(e) => setNewEmail(e.target.value)}
               className="form-control"
