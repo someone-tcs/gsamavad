@@ -50,13 +50,6 @@ const ProfilePage = () => {
             />
 
             <br />
-            <input
-              disabled
-              defaultValue={username}
-              onChange={(e) => setNewUsername(e.target.value)}
-              className="form-control mt-3"
-              style={{ background: '#eee', color: 'black', border: 'none', borderRadius: '10px' }}
-            />
             <br />
             <input
               defaultValue={photoURL}

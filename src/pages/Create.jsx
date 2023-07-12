@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { auth, db } from '../../server/server';
+import React, { useState } from 'react'
+import { db } from '../server/server';
 
 const Create = () => {
     const [title, setTitle] = useState();
     const [desc, setDesc] = useState();
     const [email, setEmail] = useState();
-    const cad = Math.random(0, 1000000000);
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -19,14 +18,15 @@ const Create = () => {
         // Clean up the listener when the component unmounts
         return () => unsubscribe();
       }, [email]);
-      const creategSamavad = () => {
-          db.collection("samavads").add({
-              id: `GS_${cad}`,
-              title : title,
-              desc: desc
-            }).then(() => {
-                window.location.href = `/samavad/${title}/GS_${cad}`
-            })
+
+    const creategSamavad = () => {
+        db.collection("samvads").add({
+            id: `GS_${Math.random(0, 1000000000)}`,
+            title : title,
+            desc: desc
+        }).then(() => {
+            window.location.href = `/samavad/${title}/${email}`
+        })
     }
 
     return (
@@ -56,7 +56,7 @@ const Create = () => {
                     style={{ background: '#eee', color: 'black', border: 'none', borderRadius: '10px', height: '40vh'}}
                 />
                 <br /><br />
-                <button onClick={creategSamavad} className="f13" style={{
+                <button className="f13" style={{
                     background: '#ffff00', color: 'black', border: '3px solid black', padding: '10px', borderRadius: '10px', width: '100%', textDecoration: 'none'
                 }}><b>Create</b></button>
             </div>
